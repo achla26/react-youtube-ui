@@ -3,10 +3,6 @@ import styled from "styled-components";
 import youtube from "../images/logo.png";
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import MicIcon from '@mui/icons-material/Mic';
-import VideoCallIcon from '@mui/icons-material/VideoCall';
-import AppsIcon from '@mui/icons-material/Apps';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 
 const Navbar = () => {
