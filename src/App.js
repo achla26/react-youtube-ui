@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import styled , {ThemeProvider} from "styled-components";
+import Menu from "./components/Menu";
+import Main from "./components/Main";
+import { darkTheme, lightTheme } from "./utils/Theme";
+import Navbar from "./components/Navbar";
+import { useState } from 'react';
 
 function App() {
+  const Container = styled.div`
+    height: calc(100vh - 60px);
+    display: flex;
+    background-color: ${({ theme }) => theme.primary};
+  `;
+
+  const [darkMode, setDarkMode] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+      <Navbar/>
+      <Container>
+        <Menu darkMode={darkMode} setDarkMode={setDarkMode}/>
+        <Main/>
+      </Container>
+    </ThemeProvider>
   );
 }
 
